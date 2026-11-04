@@ -12,6 +12,7 @@ public class NPCParticles : MonoBehaviour
     private void HandleNPCDied()
     {
         var deathParticle = Instantiate(deathParticlePrefab, transform.position, deathParticlePrefab.transform.rotation);
+        deathParticle.GetComponent<ParticleSystemRenderer>().material.color = GetComponent<Renderer>().material.color;
         Destroy(deathParticle.gameObject, 4f);
     }
 }
